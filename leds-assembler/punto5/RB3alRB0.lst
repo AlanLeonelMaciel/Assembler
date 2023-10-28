@@ -1,0 +1,316 @@
+MPASM  5.31                      RB3ALRB0.ASM   10-26-2023  22:49:13         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         LIST P=pic16F628A
+                      00002         INCLUDE <P16F628A.INC>
+                      00001         LIST
+                      00002 ; P16F628A.INC  Standard Header File, Version 1.10    Microchip Technology, Inc.
+                      00265         LIST
+                      00266 
+2007   3FE1           00003         __CONFIG _CP_OFF & _WDT_OFF & _PWRTE_ON & _XT_OSC
+                      00004 
+                      00005 ; ---------------------------
+                      00006 ; --- CONFIGURACIÓN PUERTOS ---
+                      00007 ; ---------------------------
+                      00008         ORG 0x00
+0000   0186           00009         CLRF PORTB     ; Limpiamos PORTB
+0001   1683           00010         BSF STATUS,RP0 ; Colocamos en 1 el bit RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0186           00011         CLRF TRISB     ; Limpiamos TRISB, marcándolo como salida
+0003   1283           00012         BCF STATUS,RP0 ; Regresamos al banco 0
+                      00013 
+                      00014 ; *** INICIO DE PROGRAMA ***
+                      00015 ; ---------------------------
+                      00016 
+                      00017 ; Definición e inicialización de registros de trabajo
+  00000020            00018 C1 EQU 0x20
+  00000021            00019 C2 EQU 0x21
+                      00020 
+                      00021 ; 1. Encender y apagar los LEDs cada un segundo
+                      00022 ; -------------------------
+0004                  00023 CICLO1
+                      00024         
+                      00025         
+                      00026 
+                      00027       ; Encendemos los primeros 4 LEDs
+0004   1406           00028     BSF PORTB,0
+0005   2???           00029     CALL Retardo_200ms
+0006   2???           00030         CALL Retardo_200ms
+0007   2???           00031         CALL Retardo_100ms
+0008   1486           00032     BSF PORTB,1  ; Encendemos los primeros 4 LEDs
+                      00033     
+0009   2???           00034     CALL Retardo_200ms
+000A   2???           00035         CALL Retardo_200ms
+000B   2???           00036         CALL Retardo_100ms
+000C   1506           00037     BSF PORTB,2
+000D   2???           00038     CALL Retardo_200ms
+000E   2???           00039         CALL Retardo_200ms
+000F   2???           00040         CALL Retardo_100ms
+0010   1586           00041     BSF PORTB,3
+0011   2???           00042     CALL Ir_Apagando
+                      00043     
+0012   2???           00044     GOTO CICLO1
+                      00045 
+0013                  00046 Ir_Apagando
+0013   2???           00047         CALL Retardo_200ms
+0014   2???           00048         CALL Retardo_200ms
+MPASM  5.31                      RB3ALRB0.ASM   10-26-2023  22:49:13         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0015   2???           00049         CALL Retardo_100ms
+0016   1186           00050         BCF PORTB,3
+0017   2???           00051         CALL Retardo_200ms
+0018   2???           00052         CALL Retardo_200ms
+0019   2???           00053         CALL Retardo_100ms
+001A   1106           00054         BCF PORTB,2
+001B   2???           00055         CALL Retardo_200ms
+001C   2???           00056         CALL Retardo_200ms
+001D   2???           00057         CALL Retardo_100ms
+001E   1086           00058         BCF PORTB,1
+001F   2???           00059         CALL Retardo_200ms
+0020   2???           00060         CALL Retardo_200ms
+0021   2???           00061         CALL Retardo_100ms
+0022   1006           00062         BCF PORTB,0
+0023   2???           00063         CALL Retardo_200ms
+0024   2???           00064         CALL Retardo_200ms
+0025   2???           00065         CALL Retardo_100ms
+0026   0008           00066         return
+0027                  00067 Retardo_200ms
+0027   30C8           00068                         MOVLW D'200'                            ;x              
+0028   2???           00069                         GOTO Retardo_Pedido_Ms
+0029                  00070 Retardo_100ms
+0029   3064           00071                         MOVLW D'100'                                            
+002A   2???           00072                         GOTO Retardo_Pedido_Ms
+                      00073                                         
+                      00074 ;Rutina de retarde pedido       
+002B                  00075 Retardo_Pedido_Ms
+002B   00A1           00076                         MOVWF C2
+                      00077 ;Rutina 1ms             
+002C                  00078 Retraso_1miliSegundo                                                                    
+002C   30F9           00079                         MOVLW D'249'                    ;y      
+002D   00A0           00080                         MOVWF C1                                
+002E                  00081 Regresa_1Ms                                                                     
+002E   0000           00082                         NOP                             
+002F   0BA0           00083                         DECFSZ C1,1                     
+0030   2???           00084                         GOTO Regresa_1Ms
+                      00085 ;fin 1ms
+0031   0BA1           00086                         DECFSZ C2,1   ;se ejecuta 1ms las veces pedidas
+0032   2???           00087                         goto Retraso_1miliSegundo       
+0033   0008           00088                         return                          
+                      00089                                                 
+                      00090         
+                      00091         ;Cm = t (mhz/4)
+                      00092         ; cm= t (4/4)
+                      00093         ;cm= t(en us)
+                      00094         ;1cm->1us
+                      00095         
+                      00096 
+3FE1                  00097         END
+MPASM  5.31                      RB3ALRB0.ASM   10-26-2023  22:49:13         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ADEN                              00000003
+BRGH                              00000002
+C                                 00000000
+C1                                00000020
+C1INV                             00000004
+C1OUT                             00000006
+C2                                00000021
+C2INV                             00000005
+C2OUT                             00000007
+CCP1CON                           00000017
+CCP1IE                            00000002
+CCP1IF                            00000002
+CCP1M0                            00000000
+CCP1M1                            00000001
+CCP1M2                            00000002
+CCP1M3                            00000003
+CCP1X                             00000005
+CCP1Y                             00000004
+CCPR1H                            00000016
+CCPR1L                            00000015
+CICLO1                            00000004
+CIS                               00000003
+CM0                               00000000
+CM1                               00000001
+CM2                               00000002
+CMCON                             0000001F
+CMIE                              00000006
+CMIF                              00000006
+CREN                              00000004
+CSRC                              00000007
+DC                                00000001
+EEADR                             0000009B
+EECON1                            0000009C
+EECON2                            0000009D
+EEDATA                            0000009A
+EEIE                              00000007
+EEIF                              00000007
+F                                 00000001
+FERR                              00000002
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+Ir_Apagando                       00000013
+NOT_BO                            00000000
+NOT_BOD                           00000000
+NOT_BOR                           00000000
+NOT_PD                            00000003
+NOT_POR                           00000001
+MPASM  5.31                      RB3ALRB0.ASM   10-26-2023  22:49:13         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+NOT_RBPU                          00000007
+NOT_T1SYNC                        00000002
+NOT_TO                            00000004
+OERR                              00000001
+OPTION_REG                        00000081
+OSCF                              00000003
+PCL                               00000002
+PCLATH                            0000000A
+PCON                              0000008E
+PEIE                              00000006
+PIE1                              0000008C
+PIR1                              0000000C
+PORTA                             00000005
+PORTB                             00000006
+PR2                               00000092
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RBIE                              00000003
+RBIF                              00000000
+RCIE                              00000005
+RCIF                              00000005
+RCREG                             0000001A
+RCSTA                             00000018
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+RX9                               00000006
+RX9D                              00000000
+Regresa_1Ms                       0000002E
+Retardo_100ms                     00000029
+Retardo_200ms                     00000027
+Retardo_Pedido_Ms                 0000002B
+Retraso_1miliSegundo              0000002C
+SPBRG                             00000099
+SPEN                              00000007
+SREN                              00000005
+STATUS                            00000003
+SYNC                              00000004
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+T1CKPS0                           00000004
+T1CKPS1                           00000005
+T1CON                             00000010
+T1OSCEN                           00000003
+T2CKPS0                           00000000
+T2CKPS1                           00000001
+T2CON                             00000012
+TMR0                              00000001
+TMR1CS                            00000001
+MPASM  5.31                      RB3ALRB0.ASM   10-26-2023  22:49:13         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR1H                             0000000F
+TMR1IE                            00000000
+TMR1IF                            00000000
+TMR1L                             0000000E
+TMR1ON                            00000000
+TMR2                              00000011
+TMR2IE                            00000001
+TMR2IF                            00000001
+TMR2ON                            00000002
+TOUTPS0                           00000003
+TOUTPS1                           00000004
+TOUTPS2                           00000005
+TOUTPS3                           00000006
+TRISA                             00000085
+TRISB                             00000086
+TRMT                              00000001
+TX9                               00000006
+TX9D                              00000000
+TXEN                              00000005
+TXIE                              00000004
+TXIF                              00000004
+TXREG                             00000019
+TXSTA                             00000098
+VR0                               00000000
+VR1                               00000001
+VR2                               00000002
+VR3                               00000003
+VRCON                             0000009F
+VREN                              00000007
+VROE                              00000006
+VRR                               00000005
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_BODEN_OFF                        00003FBF
+_BODEN_ON                         00003FFF
+_BOREN_OFF                        00003FBF
+_BOREN_ON                         00003FFF
+_CP_OFF                           00003FFF
+_CP_ON                            00001FFF
+_DATA_CP_OFF                      00003FFF
+_DATA_CP_ON                       00003EFF
+_ER_OSC_CLKOUT                    00003FFF
+_ER_OSC_NOCLKOUT                  00003FFE
+_EXTCLK_OSC                       00003FEF
+_HS_OSC                           00003FEE
+_INTOSC_OSC_CLKOUT                00003FFD
+_INTOSC_OSC_NOCLKOUT              00003FFC
+_INTRC_OSC_CLKOUT                 00003FFD
+_INTRC_OSC_NOCLKOUT               00003FFC
+_LP_OSC                           00003FEC
+MPASM  5.31                      RB3ALRB0.ASM   10-26-2023  22:49:13         PAGE  6
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+_LVP_OFF                          00003F7F
+_LVP_ON                           00003FFF
+_MCLRE_OFF                        00003FDF
+_MCLRE_ON                         00003FFF
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC_CLKOUT                    00003FFF
+_RC_OSC_NOCLKOUT                  00003FFE
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FED
+__16F628A                         00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     1 reported,     0 suppressed
+
+

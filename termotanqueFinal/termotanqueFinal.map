@@ -1,0 +1,62 @@
+MPLINK 4.31, Linker
+Linker Map File - Created Sat Oct 28 01:31:04 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x0000e2
+                   .cinit    romdata   0x000071    program   0x000004
+.config_2007_TERMOTANQUEFINAL.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000072      
+                            0x002007    0x002007      
+            116 out of 2183 program addresses used, program memory utilization is 5%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             AbrirCanilla   0x000047    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+           AguaMenosDe110   0x00001b    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+        Bomba_Resistencia   0x000059    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+             CalentarAgua   0x000033    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+                   INICIO   0x000012    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+                     LOOP   0x00001c    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+              LOOPCANILLA   0x00004e    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+          Prender_TempMax   0x000041    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+              Regresa_1Ms   0x00006b    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+            Retardo_100ms   0x000066    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+            Retardo_200ms   0x000064    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+        Retardo_Pedido_Ms   0x000068    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+     Retraso_1miliSegundo   0x000069    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+         SalirLOOPCANILLA   0x000057    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+          VerificandoAgua   0x000026    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   INICIO   0x000012    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+           AguaMenosDe110   0x00001b    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+                     LOOP   0x00001c    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+          VerificandoAgua   0x000026    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+             CalentarAgua   0x000033    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+          Prender_TempMax   0x000041    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+             AbrirCanilla   0x000047    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+              LOOPCANILLA   0x00004e    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+         SalirLOOPCANILLA   0x000057    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+        Bomba_Resistencia   0x000059    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+            Retardo_200ms   0x000064    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+            Retardo_100ms   0x000066    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+        Retardo_Pedido_Ms   0x000068    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+     Retraso_1miliSegundo   0x000069    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+              Regresa_1Ms   0x00006b    program     static C:\Users\alanl\Documents\Unla\termotanque-assembler\termotanqueFinal\termotanqueFinal.asm
+
+

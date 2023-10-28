@@ -1,0 +1,46 @@
+MPLINK 4.31, Linker
+Linker Map File - Created Thu Oct 26 22:49:14 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000068
+                   .cinit    romdata   0x000034    program   0x000004
+  .config_2007_RB3ALRB0.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000035      
+                            0x002007    0x002007      
+            55 out of 2183 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   CICLO1   0x000004    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+              Ir_Apagando   0x000013    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+              Regresa_1Ms   0x00002e    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+            Retardo_100ms   0x000029    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+            Retardo_200ms   0x000027    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+        Retardo_Pedido_Ms   0x00002b    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+     Retraso_1miliSegundo   0x00002c    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   CICLO1   0x000004    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+              Ir_Apagando   0x000013    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+            Retardo_200ms   0x000027    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+            Retardo_100ms   0x000029    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+        Retardo_Pedido_Ms   0x00002b    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+     Retraso_1miliSegundo   0x00002c    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+              Regresa_1Ms   0x00002e    program     static C:\Users\alanl\Documents\Unla\punto2\5\RB3alRB0.asm
+
+

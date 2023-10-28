@@ -1,0 +1,17 @@
+	LIST P=pic16F628A
+	INCLUDE <P16F628A.INC>
+	__CONFIG _CP_OFF & _WDT_OFF & _PWRTE_ON & _XT_OSC
+
+	; ---------------------------
+	; --- CONFIGURACIÓN PUERTOS ---
+	; ---------------------------
+	ORG 0x00
+	CLRF PORTB     ; Limpiamos PORTB
+	BSF STATUS,RP0 ; Colocamos en 1 el bit RP0
+	CLRF TRISB     ; Limpiamos TRISB, marcándolo como salida
+	MOVLW B'00010000' ; Configuramos  RB4 como entradas
+	MOVWF TRISB     ; Establecemos RB4 como entradas
+	BCF STATUS,RP0 ; Regresamos al banco 0
+
+
+	END 

@@ -1,0 +1,44 @@
+MPLINK 4.31, Linker
+Linker Map File - Created Thu Oct 26 21:13:40 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00003e
+                   .cinit    romdata   0x00001f    program   0x000004
+  .config_2007_1S-500MS.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000020      
+                            0x002007    0x002007      
+            34 out of 2183 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   CICLO1   0x000004    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+              Regresa_1Ms   0x000019    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+            Retardo_100ms   0x000014    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+            Retardo_200ms   0x000012    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+        Retardo_Pedido_Ms   0x000016    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+     Retraso_1miliSegundo   0x000017    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   CICLO1   0x000004    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+            Retardo_200ms   0x000012    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+            Retardo_100ms   0x000014    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+        Retardo_Pedido_Ms   0x000016    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+     Retraso_1miliSegundo   0x000017    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+              Regresa_1Ms   0x000019    program     static C:\Users\alanl\Documents\Unla\punto2\3\1s-500ms.asm
+
+
